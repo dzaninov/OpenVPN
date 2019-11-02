@@ -32,7 +32,7 @@ Copy paste the server list to a file named namecheap.srv.
 
 Run these commands:
 ```
-xargs fping -a -A -c 3 < namecheap.srv 2> namecheap.ping
+fping -a -A -c 3 < namecheap.srv 2> namecheap.ping
 grep '3/3/0%' namecheap.ping | sort -t / -k 8 | head
 ```
 Pick the server at the top of the list.
