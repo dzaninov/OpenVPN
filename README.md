@@ -1,32 +1,43 @@
 # OpenVPN
 Configure OpenVPN to work with Namecheap VPN
 
+## Warnings
+This configuration is not suported by NameCheap.
+I tested this to work only on Windows.
+Not yet sure how secure it is, use at your own risk.
+
 ## Download CA certificate
 Go to this link:
 https://www.namecheap.com/support/knowledgebase/article.aspx/10167/2248/setup-namecheap-vpn-on-ddwrt-v3-router
 
-Search for "CA Cert" and download it to a file called NameCheap.crt.
+Search for "CA Cert" and download it to a file called namecheap.crt.
 
 ## Get the VPN credentials and server list
 Go to this link:
 https://www.namecheap.com/apps/dashboard
 
-Click on "Namecheap VPN" App.
-Get your username, password and the server list.
+Click on "Namecheap VPN" app.
 
-Store the username and password in a file called NameCheap.pw in this format
+Get your username, password and store them in a file named namecheap.auth having this format:
 ```
 username
 password
 ```
 
+Copy paste the server list to a file named namecheap.srv.
+
 ## Find the fastest VPN server
+
+Run these commands:
 ```
-fping -a -A -c 3 server1 server2 server3... | sort -t / -k 8 | head
+xargs fping -a -A -c 3 < namecheap.srv 2> namecheap.ping
+grep '3/3/0%' namecheap.ping | sort -t / -k 8 | head
 ```
 Pick the server at the top of the list.
 
 ## OpenVPN config file
+
+Create namecheap.ovpn
 ```
 client
 dev tun
