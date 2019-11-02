@@ -49,13 +49,13 @@ redirect-gateway
 
 auth SHA256
 auth-nocache
-auth-user-pass NameCheap.pw
+auth-user-pass namecheap.auth
 remote-cert-tls server
-ca NameCheap.crt
+ca namecheap.crt
 cipher AES-256-CBC
 tls-cipher TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-DSS-WITH-AES-256-CBC-SHA:TLS-RSA-WITH-AES-256-CBC-SHA
 
 remote 12.34.56.78
 ```
-Place NameCheap.crt and NameCheap.pw in the same folder where config file is.
+Place the namecheap.crt and namecheap.auth in the same folder where config file is.
 Replace 12.34.56.78 with the server name you want to use.
