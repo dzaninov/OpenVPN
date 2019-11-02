@@ -32,7 +32,7 @@ Copy paste the server list to a file named namecheap.srv.
 
 Run these commands:
 ```
-fping -a -A -c 3 < namecheap.srv 2> namecheap.ping
+xargs -L 5 fping -a -c 3 < namecheap.srv 2> namecheap.ping
 grep '3/3/0%' namecheap.ping | sort -t / -k 8 | head
 ```
 Pick the server at the top of the list.
@@ -57,8 +57,8 @@ ca namecheap.crt
 cipher AES-256-CBC
 tls-cipher TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-DSS-WITH-AES-256-CBC-SHA:TLS-RSA-WITH-AES-256-CBC-SHA
 
-remote 12.34.56.78
+remote vpn.example.com
 ```
 Place the namecheap.crt and namecheap.auth in the same folder where config file is.
 
-Replace 12.34.56.78 with the server name you want to use.
+Replace vpn.example.com with the server name you want to use.
