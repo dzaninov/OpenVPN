@@ -3,7 +3,9 @@ Configure OpenVPN to work with Namecheap VPN
 
 ## Warnings
 This configuration is not suported by NameCheap.
+
 I tested this to work only on Windows.
+
 Not yet sure how secure it is, use at your own risk.
 
 ## Download the CA certificate
@@ -58,4 +60,5 @@ tls-cipher TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-DSS-WITH-AES-256-CBC-SHA:TLS
 remote 12.34.56.78
 ```
 Place the namecheap.crt and namecheap.auth in the same folder where config file is.
+
 Replace 12.34.56.78 with the server name you want to use.
