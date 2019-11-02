@@ -1,13 +1,13 @@
 # OpenVPN
 Configure OpenVPN to work with Namecheap VPN
 
-# Download CA certificate
+## Download CA certificate
 Go to this link:
 https://www.namecheap.com/support/knowledgebase/article.aspx/10167/2248/setup-namecheap-vpn-on-ddwrt-v3-router
 
 Search for "CA Cert" and download it to a file called NameCheap.crt.
 
-# Get the VPN credentials and server list
+## Get the VPN credentials and server list
 Go to this link:
 https://www.namecheap.com/apps/dashboard
 
@@ -20,13 +20,13 @@ username
 password
 ```
 
-# Find the fastest VPN server
+## Find the fastest VPN server
 ```
 fping -a -A -c 3 server1 server2 server3... | sort -t / -k 8 | head
 ```
 Pick the server at the top of the list.
 
-# OpenVPN config file
+## OpenVPN config file
 ```
 client
 dev tun
