@@ -6,7 +6,7 @@ This configuration is not suported by NameCheap.
 I tested this to work only on Windows.
 Not yet sure how secure it is, use at your own risk.
 
-## Download CA certificate
+## Download the CA certificate
 Go to this link:
 https://www.namecheap.com/support/knowledgebase/article.aspx/10167/2248/setup-namecheap-vpn-on-ddwrt-v3-router
 
