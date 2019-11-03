@@ -42,8 +42,14 @@ comp-lzo
 persist-remote-ip
 redirect-gateway
 
-register-dns
-block-outside-dns
+# Windows
+# register-dns
+# block-outside-dns
+
+# Linux
+script-security 2
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf
 
 auth SHA256
 auth-nocache
