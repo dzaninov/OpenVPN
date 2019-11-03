@@ -21,14 +21,13 @@ password
 
 Copy paste the server list to a file named namecheap.srv.
 
-## Find the fastest VPN server
+## Find 3 VPN servers with lowest latency
 
 Run these commands:
 ```
 xargs -L 5 fping -a -c 3 < namecheap.srv 2> namecheap.ping
-grep '3/3/0%' namecheap.ping | sort -t / -k 8 | head
+grep '3/3/0%' namecheap.ping | sort -t / -k 8 | head -3
 ```
-Pick the server at the top of the list.
 
 ## OpenVPN config file
 
@@ -59,8 +58,10 @@ ca namecheap.crt
 cipher AES-256-CBC
 tls-cipher TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-DSS-WITH-AES-256-CBC-SHA:TLS-RSA-WITH-AES-256-CBC-SHA
 
-remote vpn.example.com
+remote vpn1.example.com
+remote vpn2.example.com
+remote vpn3.example.com
 ```
 Place the namecheap.crt and namecheap.auth in the same folder where config file is.
 
-Replace vpn.example.com with the server name you want to use.
+Replace vpn?.example.com with chosen servers.
