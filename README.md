@@ -65,3 +65,11 @@ remote vpn3.example.com
 Place the namecheap.crt and namecheap.auth in the same folder where config file is.
 
 Replace vpn?.example.com with chosen servers.
+
+## Verify
+
+Check your IP:
+https://www.whatismyip.com/
+
+Check for DNS leaks:
+https://www.dnsleaktest.com/results.html
