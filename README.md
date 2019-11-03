@@ -1,9 +1,5 @@
 # OpenVPN
-Configure OpenVPN to work with Namecheap VPN
-
-## Warnings
-This configuration is not suported by NameCheap.
-Use at your own risk.
+Configure OpenVPN to work with Namecheap VPN on Linux and Windows.
 
 ## Download the CA certificate
 Go to this link:
