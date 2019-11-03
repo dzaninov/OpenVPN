@@ -42,6 +42,9 @@ comp-lzo
 persist-remote-ip
 redirect-gateway
 
+register-dns
+block-outside-dns
+
 auth SHA256
 auth-nocache
 auth-user-pass namecheap.auth
