@@ -31,7 +31,7 @@ grep '3/3/0%' namecheap.ping | sort -t / -k 8 | head -3
 
 ## OpenVPN config file
 
-Create namecheap.ovpn
+Create namecheap.ovpn for Windows or namecheap.conf for Linux:
 ```
 client
 dev tun
