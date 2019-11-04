@@ -73,3 +73,30 @@ https://www.whatismyip.com/
 
 Check for DNS leaks:
 https://www.dnsleaktest.com/results.html
+
+## Exceptions
+Some content can only be accessed without VPN, reroute it to bypass the VPN.
+
+1. Capture all outgoing connections:
+```
+tcpdump -n "tcp[tcpflags] & (tcp-syn) != 0 and src host 12.34.56.78" > capture.log
+```
+2. Try to access blocked content.
+
+3. Get the list of used ip's.
+```
+awk '{print $5}' < capture.log | sort -u
+```
+4. Find a network for the ip address at https://www.arin.net.
+
+5. Reroute all networks to bypass the VPN and test if you can now access the content.
+```
+ip route add 13.35.0.0/16 via 192.168.1.1
+```
+6. Delete routes one by one until content is blocked again to find which network needs to be rerouted.
+```
+ip route del 13.35.0.0/16
+```
+
+### Amazon Prime
+ip route add 13.35.0.0/16 via 192.168.1.1
