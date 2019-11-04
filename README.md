@@ -102,3 +102,17 @@ ip route del 13.35.0.0/16
 ```
 ip route add 13.35.0.0/16 via 192.168.1.1
 ```
+
+#### Hulu
+Get the list of ip's to reroute
+```
+nslookup play.hulu.com
+```
+ip route add 3.90.74.69 via 192.168.1.1
+ip route add 3.224.134.252 via 192.168.1.1
+ip route add 54.165.148.62 via 192.168.1.1
+ip route add 3.209.43.215 via 192.168.1.1
+ip route add 54.175.31.157 via 192.168.1.1
+ip route add 52.86.98.150 via 192.168.1.1
+ip route add 52.55.166.119 via 192.168.1.1
+ip route add 18.215.31.61 via 192.168.1.1
