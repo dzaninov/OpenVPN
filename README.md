@@ -85,7 +85,7 @@ tcpdump -n "tcp[tcpflags] & (tcp-syn) != 0 and src host 12.34.56.78" > capture.l
 
 3. Get the list of used ip's.
 ```
-awk '{print $5}' < capture.log | sort -u
+awk '{print $5}' < capture.log | cut -d. -f-4 | sort -u
 ```
 4. Find a network for the ip address at https://www.arin.net.
 
