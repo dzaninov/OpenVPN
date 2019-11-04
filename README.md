@@ -98,5 +98,5 @@ ip route add 13.35.0.0/16 via 192.168.1.1
 ip route del 13.35.0.0/16
 ```
 
-### Amazon Prime
+#### Amazon Prime
 ip route add 13.35.0.0/16 via 192.168.1.1
