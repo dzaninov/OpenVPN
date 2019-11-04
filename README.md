@@ -89,11 +89,11 @@ awk '{print $5}' < capture.log | cut -d. -f-4 | sort -u
 ```
 4. Find a network for the ip address at https://www.arin.net.
 
-5. Reroute all networks to bypass the VPN and test if you can now access the content.
+5. Reroute networks one by one to bypass the VPN until you find the one that requires rerouting.
 ```
 ip route add 13.35.0.0/16 via 192.168.1.1
 ```
-6. Delete routes one by one until content is blocked again to find which network needs to be rerouted.
+6. Delete unneeded routes.
 ```
 ip route del 13.35.0.0/16
 ```
