@@ -79,6 +79,10 @@ https://www.dnsleaktest.com/results.html
 ## Exceptions
 Some content can only be accessed without VPN, reroute it to bypass the VPN.
 
+Netflix is not blocked.
+
+Not sure yet how to reroute Amazon Prime effectively.
+
 #### Hulu
 Get the list of ip's for play.hulu.com:
 ```
