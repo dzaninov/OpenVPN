@@ -77,32 +77,6 @@ https://www.dnsleaktest.com/results.html
 ## Exceptions
 Some content can only be accessed without VPN, reroute it to bypass the VPN.
 
-1. Capture all outgoing connections:
-```
-tcpdump -n "tcp[tcpflags] & (tcp-syn) != 0 and src host 12.34.56.78" > capture.log
-```
-2. Try to access blocked content.
-
-3. Get the list of used ip's.
-```
-awk '{print $5}' < capture.log | cut -d. -f-4 | sort -u
-```
-4. Find a network for the ip address at https://www.arin.net.
-
-5. Reroute networks one by one to bypass the VPN until you find the one that requires rerouting.
-```
-ip route add 13.35.0.0/16 via 192.168.1.1
-```
-6. Delete unneeded routes.
-```
-ip route del 13.35.0.0/16
-```
-
-#### Amazon Prime
-```
-ip route add 13.35.0.0/16 via 192.168.1.1
-```
-
 #### Hulu
 Get the list of ip's for play.hulu.com:
 ```
