@@ -46,9 +46,9 @@ redirect-gateway
 # block-outside-dns
 
 # Linux
-script-security 2
-up /etc/openvpn/update-resolv-conf
-down /etc/openvpn/update-resolv-conf
+# script-security 2
+# up /etc/openvpn/update-resolv-conf
+# down /etc/openvpn/update-resolv-conf
 
 auth SHA256
 auth-nocache
@@ -62,9 +62,11 @@ remote vpn1.example.com
 remote vpn2.example.com
 remote vpn3.example.com
 ```
-Place the namecheap.crt and namecheap.auth in the same folder where config file is.
+Uncomment Linux or Windows section.
 
 Replace vpn?.example.com with chosen servers.
+
+Place the namecheap.crt and namecheap.auth in the same folder where config file is.
 
 ## Verify
 
