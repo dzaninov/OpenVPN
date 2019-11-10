@@ -74,7 +74,7 @@ Check your IP:
 https://www.whatismyip.com/
 
 Check for DNS leaks:
-https://www.dnsleaktest.com/results.html
+https://www.dnsleaktest.com/
 
 ## Exceptions
 Some content can only be accessed without VPN, reroute it to bypass the VPN.
