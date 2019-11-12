@@ -79,25 +79,31 @@ https://www.dnsleaktest.com/
 ## Exceptions
 Some content can only be accessed without VPN, reroute it to bypass the VPN.
 
-#### Hulu
-Get the list of ip's for play.hulu.com:
+Create /root/bypass.hosts with list of hosts to bypass:
 ```
-nslookup play.hulu.com
+play.hulu.com
+www.amazon.com
+atv-ps.amazon.com
 ```
-Reroute:
+
+Run this script in background to keep routes updated:
 ```
-ip route add 3.90.74.69 via 192.168.1.1
-ip route add 3.224.134.252 via 192.168.1.1
-ip route add 54.165.148.62 via 192.168.1.1
-ip route add 3.209.43.215 via 192.168.1.1
-ip route add 54.175.31.157 via 192.168.1.1
-ip route add 52.86.98.150 via 192.168.1.1
-ip route add 52.55.166.119 via 192.168.1.1
-ip route add 18.215.31.61 via 192.168.1.1
+#!/bin/bash
+
+while true
+do
+    GW=$(ip route show | grep eth0 | grep default | awk '{print $3}')
+
+    grep . /root/bypass.hosts | grep -v '^#' |
+    while read HOST
+    do
+        dig +short $HOST | grep '^[0-9]' | xargs -I '{}' -n 1 ip route add '{}' via $GW
+    done
+
+    sleep 1
+done
 ```
 
 #### Others
 
 Netflix is not blocked.
-
-Not sure yet how to reroute Amazon Prime effectively.
