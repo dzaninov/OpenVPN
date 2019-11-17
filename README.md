@@ -102,7 +102,7 @@ do
         dig +short $HOST | grep '^[0-9]' | xargs -I '{}' -n 1 ip route add '{}' via $GW
     done
 
-    sleep 1
+    sleep 5
 done
 ```
 
