@@ -84,6 +84,7 @@ Create /root/bypass.hosts with list of hosts to bypass:
 play.hulu.com
 www.amazon.com
 atv-ps.amazon.com
+atv-ext.amazon.com
 api.spectrum.net
 ```
 
