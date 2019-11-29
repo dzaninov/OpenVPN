@@ -26,7 +26,7 @@ Copy paste the server list to a file named namecheap.srv.
 Run these commands:
 ```
 xargs -L 5 fping -a -c 3 < namecheap.srv 2> namecheap.ping
-grep '3/3/0%' namecheap.ping | sort -t / -k 8 | head -3
+grep '3/3/0%' namecheap.ping | sort -t / -k 8 -n | head -3
 ```
 
 ## OpenVPN config file
